@@ -29,8 +29,8 @@
     "chai-as-promised": "^7.1.1",
     "chai-bignumber": "^2.0.1",
     "ganache-cli": "6.1.0",
-    "tce-contracts": "git@github.com:blockmason/tce-contracts.git#92de2e06e55581e3d3a6c9fcd2a2bd30a53c4ff5",
-    "credit-protocol": "git@github.com:blockmason/credit-protocol.git#85d5708a609df531c28c3f7f90c0b9f6ad1789c9",
+    "tce-contracts": "https://github.com/blockmason/tce-contracts.git#92de2e06e55581e3d3a6c9fcd2a2bd30a53c4ff5",
+    "credit-protocol": "https://github.com/blockmason/credit-protocol.git#85d5708a609df531c28c3f7f90c0b9f6ad1789c9",
     "truffle": "3.4.9",
     "zeppelin-solidity": "1.3.0"
   }
