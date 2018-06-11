@@ -19,7 +19,7 @@ jobs:
     - run:
         name: stack install
         command: |
-          stack install
+          stack install --dump-logs
     - save_cache:
         key: v2-{{ checksum "stack.yaml" }}
         paths:
