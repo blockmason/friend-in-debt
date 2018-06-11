@@ -19,7 +19,13 @@ jobs:
     - run:
         name: stack install
         command: |
-          stack install --dump-logs
+          INSTALL_EXIT_STATUS_CODE=
+          (stack install --dump-logs; INSTALL_EXIT_STATUS_CODE=$?) &
+          while [ -z "${INSTALL_EXIT_STATUS_CODE}" ]; do
+            echo "Waiting for install to complete..."
+            sleep 5
+          done
+          exit "${INSTALL_EXIT_STATUS_CODE}"
     - save_cache:
         key: v2-{{ checksum "stack.yaml" }}
         paths:
