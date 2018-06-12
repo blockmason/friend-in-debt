@@ -34,58 +34,58 @@ library
                , Lndr.Handler.Types
                , Lndr.Notifications
   build-depends:       base >= 4.7 && < 5
-                     , aeson
-                     , amazonka
-                     , amazonka-s3
-                     , base16-bytestring
-                     , base64-bytestring
-                     , bimap
+                     , aeson 1.2.4.0
+                     , amazonka 1.5.0
+                     , amazonka-s3 1.5.0
+                     , base16-bytestring 0.1.1.6
+                     , base64-bytestring 1.0.0.1
+                     , bimap 0.3.3
                      , bytestring
-                     , configurator
+                     , configurator 0.3.0.0
                      , containers
-                     , cryptonite
-                     , data-default
+                     , cryptonite 0.24
+                     , data-default 0.7.1.1
                      , directory
-                     , either
-                     , emailaddress
-                     , ethereumhs-util
+                     , either 4.5
+                     , emailaddress 0.2.0.0
+                     , ethereumhs-util 0.1.0.0
                      , filepath
-                     , fast-logger
-                     , hashable
-                     , http-client
-                     , http-conduit
-                     , http-types
-                     , lens
-                     , listsafe
-                     , list-t
-                     , memory
-                     , mtl
-                     , postgresql-simple
-                     , resourcet
-                     , resource-pool
-                     , scientific
-                     , servant
-                     , servant-docs
-                     , servant-server
-                     , sized
-                     , stm
-                     , text
+                     , fast-logger 2.4.11
+                     , hashable 1.2.6.1
+                     , http-client 0.5.10
+                     , http-conduit 2.2.4
+                     , http-types 0.9.1
+                     , lens 4.15.4
+                     , listsafe 0.1.0.1
+                     , list-t 1.0.0.1
+                     , memory 0.14.11
+                     , mtl 2.2.1
+                     , postgresql-simple 0.5.3.0
+                     , resourcet 1.1.11
+                     , resource-pool 0.2.3.2
+                     , scientific 0.3.5.2
+                     , servant 0.11
+                     , servant-docs 0.11
+                     , servant-server 0.11.0.1
+                     , sized 0.2.1.1
+                     , stm 2.4.5.0
+                     , text 1.2.2.2
                      , time
                      , transformers
-                     , unordered-containers
-                     , wai
-                     , warp
-                     , web3
+                     , unordered-containers 0.2.8.0
+                     , wai 3.2.1.1
+                     , warp 3.2.13
+                     , web3 0.6.0.0
   default-language:    Haskell2010
 
 executable lndr-server
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -O2 -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
-                     , lndr-backend
-                     , wai
-                     , wai-logger
-                     , warp
-                     , warp-tls
+  build-depends:       base >= 4.7 && < 5
+                     , lndr-backend 1.0.0
+                     , wai 3.2.1.1
+                     , wai-logger 2.3.1
+                     , warp 3.2.13
+                     , warp-tls 3.2.4
   default-language:    Haskell2010
