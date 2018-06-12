@@ -19,21 +19,21 @@ library
                      , Lndr.CLI.CmdLine
                      , Lndr.CLI.Config
   build-depends:       base >= 4.7 && < 5
-                     , base64-bytestring 1.0.0.1
+                     , base64-bytestring = 1.0.0.1
                      , bytestring
-                     , cmdargs 0.10.20
+                     , cmdargs = 0.10.20
                      , data-default
-                     , dhall 1.8.0
+                     , dhall = 1.8.0
                      , directory
-                     , emailaddress 0.2.0.0
-                     , ethereumhs-util 0.1.0.0
+                     , emailaddress = 0.2.0.0
+                     , ethereumhs-util = 0.1.0.0
                      , filepath
-                     , http-conduit 2.2.4
-                     , lndr-backend 1.0.0
-                     , postgresql-simple 0.5.3.0
-                     , pretty-simple 2.0.2.0
-                     , text 1.2.2.2
-                     , web3 0.6.0.0
+                     , http-conduit = 2.2.4
+                     , lndr-backend = 1.0.0
+                     , postgresql-simple = 0.5.3.0
+                     , pretty-simple = 2.0.2.0
+                     , text = 1.2.2.2
+                     , web3 = 0.6.0.0
   default-language:    Haskell2010
 
 executable lndr
@@ -41,20 +41,20 @@ executable lndr
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base >= 4.7 && < 5
-                     , lndr-cli 0.1.0.0
-                     , aeson 1.2.4.0
-                     , base16-bytestring 0.1.1.6
+                     , lndr-cli = 0.1.0.0
+                     , aeson = 1.2.4.0
+                     , base16-bytestring = 0.1.1.6
                      , bytestring
-                     , cmdargs 0.10.20
+                     , cmdargs = 0.10.20
                      , data-default
-                     , dhall 1.8.0
+                     , dhall = 1.8.0
                      , directory
-                     , either 4.5
-                     , emailaddress 0.2.0.0
-                     , listsafe 0.1.0.1
-                     , memory 0.14.11
-                     , text 1.2.2.2
-                     , web3 0.6.0.0
+                     , either = 4.5
+                     , emailaddress = 0.2.0.0
+                     , listsafe = 0.1.0.1
+                     , memory = 0.14.11
+                     , text = 1.2.2.2
+                     , web3 = 0.6.0.0
   default-language:    Haskell2010
 
 
@@ -63,17 +63,17 @@ test-suite server-cli-integration
   hs-source-dirs:      test
   main-is:             Spec.hs
   build-depends:       base >= 4.7 && < 5
-                     , lndr-cli 0.1.0.0
-                     , lndr-backend 1.0.0
+                     , lndr-cli = 0.1.0.0
+                     , lndr-backend = 1.0.0
                      , containers
                      , directory
-                     , either 4.5
-                     , emailaddress 0.2.0.0
-                     , HUnit 1.6.0.0
+                     , either = 4.5
+                     , emailaddress = 0.2.0.0
+                     , HUnit = 1.6.0.0
                      , test-framework
                      , test-framework-hunit
-                     , text 1.2.2.2
+                     , text = 1.2.2.2
                      , transformers
-                     , web3 0.6.0.0
+                     , web3 = 0.6.0.0
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
