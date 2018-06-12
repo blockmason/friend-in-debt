@@ -36,7 +36,7 @@ library
   build-depends:       base >= 4.7 && < 5
                      , aeson
                      , amazonka
-                     , amazonka-s3
+                     , amazonka
                      , base16-bytestring
                      , base64-bytestring
                      , bimap
@@ -82,7 +82,7 @@ executable lndr-server
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -O2 -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
+  build-depends:       base >= 4.7 && < 5
                      , lndr-backend
                      , wai
                      , wai-logger
