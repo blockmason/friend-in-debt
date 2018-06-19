@@ -21,5 +21,3 @@ sendNotification config notification = do
     HTTP.getResponseStatusCode <$> HTTP.httpNoBody req
     where acceptContent = "application/json"
           notificationUrl = (notificationsApiUrl config)
-
-notificationMessages = "Pending credit confirmation from "
