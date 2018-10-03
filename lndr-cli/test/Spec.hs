@@ -444,6 +444,15 @@ basicNotificationsTest = do
     httpCode <- registerChannel testUrl testPrivkey1 (PushRequest "31279004-103e-4ba8-b4bf-65eb3eb81859" "ios" testAddress1 "")
     assertEqual "register channel success" 204 httpCode
 
+    httpCode <- registerChannel testUrl testPrivkey1 (PushRequest "31279004-103e-4ba8-b4bf-65eb3eb81859" "ios" testAddress1 "")
+    assertEqual "able to register twice with the same address and device" 204 httpCode
+
+    httpCode <- registerChannel testUrl testPrivkey2 (PushRequest "31279004-103e-4ba8-b4bf-65eb3eb81859" "ios" testAddress2 "")
+    assertEqual "able to register device with a different user" 204 httpCode
+
+    httpCode <- registerChannel testUrl testPrivkey2 (PushRequest "79312004-103e-4ba8-b4bf-65eb3eb59818" "android" testAddress2 "")
+    assertEqual "able to register user with a different device" 204 httpCode
+
 
 deleteNotificationsTest :: Assertion
 deleteNotificationsTest = do
@@ -476,7 +485,7 @@ multiSettlementLendTest = do
             , ( CreditRecord testAddress8 testAddress7 testAmount2 "multiSettlement good 2" testAddress7 1 "" "" ucacAddrJPY Nothing Nothing Nothing ) ]
         badTestCredits' = [ ( CreditRecord testAddress7 testAddress7 testAmount1 "multiSettlement bad 1" testAddress7 0 "" "" ucacAddr Nothing Nothing Nothing )
             , ( CreditRecord testAddress7 testAddress7 testAmount2 "multiSettlement bad 2" testAddress7 1 "" "" ucacAddrJPY Nothing Nothing Nothing ) ]
-            
+
         -- creditHash =  testCredit'
         testHashes = fmap generateHash testCredits'
         testCredits = fmap (\credit -> credit { hash = generateHash credit } ) testCredits'
@@ -569,7 +578,7 @@ advancedSettlementTest = do
         testAmount2 = 1039
         testCredits' = [ ( CreditRecord testAddress9 testAddress0 testAmount1 "advanced settlement 1" testAddress9 0 "" "" ucacAddr (Just "ETH") Nothing Nothing )
             , ( CreditRecord testAddress0 testAddress9 testAmount2 "advanced settlement 2" testAddress9 1 "" "" ucacAddrJPY (Just "ETH") Nothing Nothing ) ]
-            
+
         -- creditHash =  testCredit'
         testHashes = fmap generateHash testCredits'
         testCredits = fmap (\credit -> credit { hash = generateHash credit } ) testCredits'
@@ -589,7 +598,7 @@ advancedSettlementTest = do
      -- user6 accepts user5's pending settlement credit
     httpCode <- submitMultiSettlement testUrl testPrivkey0 testCredits2
     assertEqual "borrow (settle) success" 204 httpCode
-   
+
     (SettlementsResponse pendingSettlements bilateralPendingSettlements) <- getPendingSettlements testUrl testAddress9
     assertEqual "post-confirmation: get pending settlements success" 0 (length pendingSettlements)
     assertEqual "post-confirmation: get bilateral pending settlements success" 2 (length bilateralPendingSettlements)
